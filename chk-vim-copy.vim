@@ -87,11 +87,18 @@ set ignorecase
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nobackup
-set noswapfile
-set autoread
-set autowrite
-set confirm
+" set noswapfile
+" set autoread
+" set autowrite
+" set confirm
+
+set undofile
+set backup
+set writebackup
+set backupdir=~/.tmp-vim,~/.tmp,~/tmp,/var/tmp,/tmp " Don't clutter my dirs up with swp and tmp files
+set directory=~/.tmp-vim,~/.tmp,~/tmp,/var/tmp,/tmp
+set undodir=~/.tmp-vim,~/.tmp,~/tmp,/var/tmp,/tmp
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enconding
@@ -164,6 +171,28 @@ command! AsHtml :!clear; w3m -dump %
 command! AsHtmlLess :!clear; w3m -dump % | less
 command! ASHtml AsHtml
 command! AsHTml AsHtml
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mod: DropDown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+func! ListMonths()
+  let list = ['January', 'February', 'March',
+   \ 'April', 'May', 'June', 'July', 'August', 'September',
+   \ 'October', 'November', 'December']
+  call complete(col('.'), list)
+  return ''
+endfunc
+inoremap <c-y>1 <C-R>=ListMonths()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mod: Fail-safe
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! Q :q
+command! Qall :qall
+command! QA :qall
+command! W :w
+command! WQ :wq
+command! Wq :wq
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Packs
