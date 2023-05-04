@@ -62,6 +62,13 @@ set sidescroll=10
 set nofoldenable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Whitespace
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set expandtab
+set tabstop=2
+set softtabstop=2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:html_indent_inctags = "html,body,head,tbody"
@@ -80,9 +87,9 @@ set completeopt-=preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set hlsearch
 set incsearch
-set ignorecase
+set hlsearch
+set ignorecase smartcase "searches case-sensitive only if they contain uppercase letters
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backup
@@ -99,7 +106,6 @@ set backupdir=~/.tmp-vim,~/.tmp,~/tmp,/var/tmp,/tmp " Don't clutter my dirs up w
 set directory=~/.tmp-vim,~/.tmp,~/tmp,/var/tmp,/tmp
 set undodir=~/.tmp-vim,~/.tmp,~/tmp,/var/tmp,/tmp
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enconding
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,6 +114,10 @@ set helplang=cn
 set termencoding=utf-8
 set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
+"set encoding=utf-8
+"scriptencoding utf-8
+"setglobal fileencoding=utf-8
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI
@@ -123,8 +133,25 @@ set guioptions-=T
 set guicursor+=a:blinkon0  " Disable all blinking:
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Splits
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set splitbelow
+set splitright
+set winminheight=0
+set winwidth=79
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap _ :sp<cr>
+nnoremap <bar> :vsp<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Scrolling
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
@@ -193,6 +220,36 @@ command! QA :qall
 command! W :w
 command! WQ :wq
 command! Wq :wq
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mod: Tabs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <c-t> :tabnew<cr>
+nnoremap <a-right> :tabnext<cr>
+nnoremap <a-left> :tabprevious<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mod: Dictionary
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set dictionary+=/home/cs/.vim/dict/words
+set complete+=k
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mod: DuplicateFile
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! DuplicateFile()
+  let old_name = expand('%')
+  if old_name != ''
+    let new_name = input('Duplicate file: ', expand('%'), 'file')
+  endif
+
+  if old_name != '' && new_name != '' && new_name !=# old_name
+    exec ':saveas ' . new_name
+    redraw!
+  endif
+endfunction
+command! Dup :call DuplicateFile()
+command! DUp Dup
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Packs
