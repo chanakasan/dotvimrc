@@ -217,5 +217,19 @@ set complete+=k
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Packs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"execute pathogen#infect() "to load packs in vim < version 8
-":packadd ultisnips
+"Install:
+"curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+" Make sure you use single quotes for Plug entries
+" Reload .vimrc and :PlugInstall to install plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
