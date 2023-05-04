@@ -17,7 +17,11 @@ syntax on
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
-colorscheme CandyCode
+if has('gui_running')
+  color CandyCode
+else
+  color grb256
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
