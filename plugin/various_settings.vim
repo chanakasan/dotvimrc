@@ -1,5 +1,5 @@
 " to improve vim speed, set below ruby path if you are using rbenv
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
+"let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
 set noerrorbells
 set history=500

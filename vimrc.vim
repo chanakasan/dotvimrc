@@ -185,34 +185,14 @@ command! CLoseAll :CloseAll
 command! InsertLineNumbers :%!nl -s '. ' -w 2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mod: Maximize
+" Maximize
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('win32')
   au GUIEnter * simalt ~x
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mod: AsHTML
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command! AsHtml :!clear; w3m -dump %
-command! AsHtmlLess :!clear; w3m -dump % | less
-command! ASHtml AsHtml
-command! AsHTml AsHtml
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mod: DropDown
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-func! ListMonths()
-  let list = ['January', 'February', 'March',
-   \ 'April', 'May', 'June', 'July', 'August', 'September',
-   \ 'October', 'November', 'December']
-  call complete(col('.'), list)
-  return ''
-endfunc
-inoremap <c-y>1 <C-R>=ListMonths()<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mod: Fail-safe
+" Fail-safe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! Q :q
 command! Qall :qall
@@ -222,7 +202,7 @@ command! WQ :wq
 command! Wq :wq
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mod: Tabs
+" Tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <c-t> :tabnew<cr>
 nnoremap <a-right> :tabnext<cr>
@@ -235,24 +215,7 @@ set dictionary+=/home/cs/.vim/dict/words
 set complete+=k
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mod: DuplicateFile
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! DuplicateFile()
-  let old_name = expand('%')
-  if old_name != ''
-    let new_name = input('Duplicate file: ', expand('%'), 'file')
-  endif
-
-  if old_name != '' && new_name != '' && new_name !=# old_name
-    exec ':saveas ' . new_name
-    redraw!
-  endif
-endfunction
-command! Dup :call DuplicateFile()
-command! DUp Dup
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Packs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-execute pathogen#infect() "to load packs in vim < version 8
-:packadd ultisnips
+"execute pathogen#infect() "to load packs in vim < version 8
+":packadd ultisnips
