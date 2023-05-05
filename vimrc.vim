@@ -12,6 +12,7 @@ filetype on
 filetype plugin on
 syntax enable
 syntax on
+set hidden
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
