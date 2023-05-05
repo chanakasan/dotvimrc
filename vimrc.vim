@@ -253,6 +253,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'dyng/ctrlsf.vim'
+Plug 'SirVer/ultisnips'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
 Plug 'kana/vim-textobj-user'
