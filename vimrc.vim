@@ -44,6 +44,8 @@ set cursorline
 set ruler
 set whichwrap+=<,>,h,l
 set ttimeoutlen=0
+set belloff=all
+set novisualbell
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editor
@@ -61,9 +63,11 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 set nowrap
-set backspace=2
+"set backspace=2
+set backspace=indent,eol,start
 set sidescroll=10
 set nofoldenable
+set showmatch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Whitespace
@@ -160,18 +164,32 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File Browsing
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:netrw_altfile=1
+command! E :e .
+nnoremap <space><space> <c-^>
+nnoremap <space>e :edit <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
+nnoremap <space>v :view <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
+cnoremap <c-j>d <C-R>=escape(expand('%:h'), ' ').'/'<cr>
+cnoremap <c-j>f <C-R>=escape(expand('%:t:r'), ' ')<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 set pastetoggle=<M-p>
-nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 nnoremap <leader>s :source $MYVIMRC<cr>
 nnoremap <leader>e :e $MYVIMRC<cr>
+command! Ed :e $MYVIMRC
+command! Ed2 :e $HOME/.vim/plugin/temp.vim
+nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 noremap <c-s> :w<cr>
 nnoremap <cr> :nohl<cr>
 nmap <F3> i<C-R>=strftime("%Y-%m-%d %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %I:%M %p")<CR>
 nnoremap * *<C-O>:%s///gn<CR> "counts the num of occurences of word under cursor
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
