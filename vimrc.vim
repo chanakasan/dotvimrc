@@ -248,9 +248,18 @@ set complete+=k
 call plug#begin('~/.vim/plugged')
 
 Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'dyng/ctrlsf.vim'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-syntax'
+Plug 'kana/vim-textobj-function'
+Plug 'sgur/vim-textobj-parameter'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
