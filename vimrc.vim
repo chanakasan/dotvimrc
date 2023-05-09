@@ -175,22 +175,6 @@ nnoremap <space>v :view <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 cnoremap <c-j>d <C-R>=escape(expand('%:h'), ' ').'/'<cr>
 cnoremap <c-j>f <C-R>=escape(expand('%:t:r'), ' ')<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = ","
-set pastetoggle=<M-p>
-nnoremap <leader>s :source $MYVIMRC<cr>
-nnoremap <leader>e :e $MYVIMRC<cr>
-command! Ed :e $MYVIMRC
-command! Ed2 :e $HOME/.vim/plugin/temp.vim
-nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
-noremap <c-s> :w<cr>
-nnoremap <cr> :nohl<cr>
-nmap <F3> i<C-R>=strftime("%Y-%m-%d %I:%M %p")<CR><Esc>
-imap <F3> <C-R>=strftime("%Y-%m-%d %I:%M %p")<CR>
-nnoremap * *<C-O>:%s///gn<CR> "counts the num of occurences of word under cursor
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
@@ -206,6 +190,25 @@ command! BW :Bw
 command! CloseAll :bufdo bd
 command! CLoseAll :CloseAll
 command! InsertLineNumbers :%!nl -s '. ' -w 2
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = ","
+set pastetoggle=<M-p>
+nnoremap <leader>s :source $MYVIMRC<cr>
+nnoremap <leader>e :e $MYVIMRC<cr>
+command! Ed :e $MYVIMRC
+command! Ed2 :e $HOME/.vim/plugin/temp.vim
+nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
+noremap <c-s> :w<cr>
+nnoremap <cr> :nohl<cr>
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %I:%M %p")<CR>
+"counts the num of occurences of word under cursor
+nnoremap * *<C-O>:%s///gn<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maximize
@@ -254,7 +257,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'dyng/ctrlsf.vim'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
 Plug 'kana/vim-textobj-user'
