@@ -1,3 +1,4 @@
+"
 "  Author: chanakasan <chanakasan@gmail.com>
 "  Repository: https://github.com/chanakasan/chk-vim
 "  Create Date: 2023-05-05
@@ -38,7 +39,7 @@ end
 " Appearance
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set title
-set cmdheight=8
+set cmdheight=1
 set showcmd
 set laststatus=2
 set cursorline
@@ -208,14 +209,6 @@ nmap <F3> i<C-R>=strftime("%Y-%m-%d %I:%M %p")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %I:%M %p")<CR>
 "counts the num of occurences of word under cursor
 nnoremap * *<C-O>:%s///gn<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maximize
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('win32')
-  au GUIEnter * simalt ~x
-endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fail-safe
