@@ -129,11 +129,15 @@ set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set guifont=DejaVuSansMono_Nerd_Font_Mono:h12:cANSI:qDRAFT
+if has('linux')
+  set guifont=DejaVu\ Sans\ Mono\ 18
+else
+  set guifont=DejaVuSansMono_Nerd_Font_Mono:h12:cANSI:qDRAFT
+endif
 set guioptions-=m
 set guioptions-=T
+set guioptions-=r
 "set guioptions-=L
-"set guioptions-=r
 "set guioptions-=b
 "set showtabline=0
 "set guicursor=n-v-c:ver5
@@ -195,10 +199,10 @@ command! Note :e $1Hq/Local/gvim notes/blank.md
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 set pastetoggle=<M-p>
-nnoremap <leader>s :source $MYVIMRC<cr>
-nnoremap <leader>e :e $MYVIMRC<cr>
+nnoremap <leader>s :source $MYGVIMRC<cr>
+nnoremap <leader>e :e $MYGVIMRC<cr>
 nnoremap <leader>n :Note<cr>
-command! Ed :e $MYVIMRC
+command! Ed :e $MYGVIMRC
 command! Ed2 :e $HOME/.vim/plugin/temp.vim
 nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 noremap <c-s> :w<cr>
@@ -214,6 +218,10 @@ nnoremap * *<C-O>:%s///gn<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('win32')
   au GUIEnter * simalt ~x
+endif
+
+if has('linux')
+  au GUIEnter * call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
