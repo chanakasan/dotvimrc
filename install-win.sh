@@ -1,11 +1,9 @@
+# Run from Git Bash
+# sh install-win.sh
 
-mkdir -p ~/.vim
-cd ~
-powershell.exe "cmd.exe /c mklink .vimrc '~/chk-vimrc/vimrc.vim'"
-powershell.exe "cmd.exe /c mklink .gvimrc '~/chk-vimrc/gvimrc.vim'"
-powershell.exe "cmd.exe /c mklink /d vimfiles .vim"
-
-cd ~/.vim
-powershell.exe "cmd.exe /c mklink /d colors '~/chk-vimrc/colors'"
-powershell.exe "cmd.exe /c mklink /d plugin '~/chk-vimrc/plugin'"
-cd ~
+powershell.exe "mkdir -p \$env:HOME\.vim"
+powershell.exe "cmd.exe /c mklink %HOME%\.vimrc %HOME%\chk-vimrc\vimrc.vim"
+powershell.exe "cmd.exe /c mklink %HOME%\.gvimrc %HOME%\chk-vimrc\gvimrc.vim"
+powershell.exe "cmd.exe /c mklink /d %HOME%\vimfiles %HOME%\.vim"
+powershell.exe "cmd.exe /c mklink /d %HOME%\.vim\colors %HOME%\chk-vimrc\colors"
+powershell.exe "cmd.exe /c mklink /d %HOME%\.vim\plugin %HOME%\chk-vimrc\plugin"
