@@ -26,7 +26,8 @@ set hidden
 " Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
-color grb256
+color catppuccin_mocha
+"color chk256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Terminal
@@ -174,6 +175,7 @@ nnoremap <C-y> 3<C-y>
 let g:netrw_altfile=1
 command! E :e .
 nnoremap <space><space> <c-^>
+nnoremap ,, <c-^>
 nnoremap <space>e :edit <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 nnoremap <space>v :view <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 cnoremap <c-j>d <C-R>=escape(expand('%:h'), ' ').'/'<cr>
@@ -261,6 +263,8 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-syntax'
 Plug 'kana/vim-textobj-function'
 Plug 'sgur/vim-textobj-parameter'
+Plug 'kvngvikram/rightclick-macros'
+Plug 'skywind3000/vim-quickui'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
