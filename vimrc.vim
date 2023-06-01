@@ -199,10 +199,18 @@ command! InsertLineNumbers :%!nl -s '. ' -w 2
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings Overrides
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <c-w> :bd<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
-set pastetoggle=<M-p>
+"set pastetoggle=<M-p>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>s :source $MYVIMRC<cr>
 nnoremap <leader>e :e $MYVIMRC<cr>
 command! Ed :e $MYVIMRC
@@ -264,7 +272,7 @@ Plug 'kana/vim-textobj-syntax'
 Plug 'kana/vim-textobj-function'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'kvngvikram/rightclick-macros'
-Plug 'skywind3000/vim-quickui'
+"Plug 'skywind3000/vim-quickui'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.

@@ -39,11 +39,8 @@ function! RenameFile()
     endif
   endif
 endfunction
-command! Mv :call RenameFile()
-command! MV Mv
-command! Rename Mv
-command! REname Mv
-
+command! Ren :call RenameFile()
+command! REn :Ren
 
 function! DeleteFile()
   let file_name = expand('%')
