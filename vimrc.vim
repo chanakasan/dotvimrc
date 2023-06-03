@@ -174,8 +174,7 @@ nnoremap <C-y> 3<C-y>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_altfile=1
 command! E :e .
-nnoremap <space><space> <c-^>
-nnoremap ,, <c-^>
+nnoremap <space>l <c-^>
 nnoremap <space>e :edit <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 nnoremap <space>v :view <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 cnoremap <c-j>d <C-R>=escape(expand('%:h'), ' ').'/'<cr>
@@ -214,7 +213,6 @@ let mapleader = ","
 nnoremap <leader>s :source $MYVIMRC<cr>
 nnoremap <leader>e :e $MYVIMRC<cr>
 command! Ed :e $MYVIMRC
-command! Ed2 :e $HOME/.vim/plugin/temp.vim
 nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 noremap <c-s> :w<cr>
 nnoremap <cr> :nohl<cr>
