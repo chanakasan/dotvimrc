@@ -1,6 +1,3 @@
-" autocomplete using tab key when pumvisible
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>\<C-y>" : "\<TAB>"
-
 " ctrl-s to save
 nnoremap <c-s> :w<cr>
 inoremap <c-s> <esc>:w<cr>
