@@ -174,7 +174,7 @@ nnoremap <C-y> 3<C-y>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_altfile=1
 command! E :e .
-nnoremap <space>l <c-^>
+nnoremap <c-q> <c-^>
 nnoremap <space>e :edit <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 nnoremap <space>v :view <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 cnoremap <c-j>d <C-R>=escape(expand('%:h'), ' ').'/'<cr>
@@ -184,6 +184,10 @@ cnoremap <c-j>f <C-R>=escape(expand('%:t:r'), ' ')<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command! Vi :e $MYVIMRC
+command! Vi :VI
+command! Ed :e $HOME/.vim/plugin
+command! ED :Ed
 command! Copy :!cat % | clip.exe
 command! COpy :Copy
 command! SourceFile :source %
@@ -200,7 +204,7 @@ command! InsertLineNumbers :%!nl -s '. ' -w 2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings Overrides
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <c-w> :bd<cr>
+nnoremap <c-w> <nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -212,7 +216,6 @@ let mapleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>s :source $MYVIMRC<cr>
 nnoremap <leader>e :e $MYVIMRC<cr>
-command! Ed :e $MYVIMRC
 nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 noremap <c-s> :w<cr>
 nnoremap <cr> :nohl<cr>
@@ -260,7 +263,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'dyng/ctrlsf.vim'
+" Plug 'dyng/ctrlsf.vim'
 " Plug 'SirVer/ultisnips'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'javascript' }
