@@ -1,0 +1,4 @@
+set env HOME=/c/Users/Admin1/Bash
+
+# Windows
+winget install "The Silver Searcher"
