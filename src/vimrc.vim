@@ -175,6 +175,7 @@ nnoremap <C-y> 3<C-y>
 let g:netrw_altfile=1
 command! E :e .
 nnoremap <c-q> <c-^>
+nnoremap <space><space> <c-^>
 nnoremap <space>e :edit <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 nnoremap <space>v :view <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 cnoremap <c-j>d <C-R>=escape(expand('%:h'), ' ').'/'<cr>
