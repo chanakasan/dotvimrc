@@ -14,3 +14,5 @@ main() {
   echo "Done"
   echo ""
 }
+
+main
