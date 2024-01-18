@@ -1,10 +1,9 @@
 # Run from Git Bash
 # sh install-win.sh
 
-
 main() {
   echo ""
-  echo " Installing vim"
+  echo " Installing - Nex Vim"
   echo " => create symlinks"
   # .vimrc
   powershell.exe "cmd.exe /c mklink %HOME%\.vimrc %HOME%\nex-vim\src\vimrc.vim"
@@ -12,7 +11,6 @@ main() {
   powershell.exe "mkdir -p \$env:HOME\.vim"
   powershell.exe "cmd.exe /c mklink /d %HOME%\.vim\colors %HOME%\nex-vim\src\colors"
   powershell.exe "cmd.exe /c mklink /d %HOME%\.vim\plugin %HOME%\nex-vim\src\plugin"
-
   # for gvim
   powershell.exe "cmd.exe /c mklink /d %HOME%\vimfiles %HOME%\.vim"
   powershell.exe "cmd.exe /c mklink %HOME%\.gvimrc %HOME%\nex-vim\src\gvimrc.vim"
