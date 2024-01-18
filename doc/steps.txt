@@ -1,5 +1,7 @@
-Install dependencies
+# steps
 
-# Ubuntu
+sh setup/install-nix.sh
+
+
+-- optional
 sudo apt-get install silversearcher-ag
-

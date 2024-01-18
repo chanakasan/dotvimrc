@@ -1,4 +1,8 @@
-set env HOME=/c/Users/Admin1/Bash
+# steps
 
-# Windows
+sh setup/install-win.sh
+
+set env var HOME=C:/Users/Admin1/Documents/Bash
+
+-- optional
 winget install "The Silver Searcher"
