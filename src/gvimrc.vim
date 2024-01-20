@@ -175,13 +175,14 @@ augroup END
 "--------------------------------
 " Map::Any
 "--------------------------------
-let mapleader = ","
+let mapleader = "<leader>"
 set pastetoggle=<M-p>
 nnoremap <leader>s :source $MYGVIMRC<cr>
 nnoremap <leader>e :e $MYGVIMRC<cr>
 nnoremap <leader>n :Note<cr>
 command! Ed :e $MYGVIMRC
-command! Ed2 :e $HOME/.vim/plugin/temp.vim
+command! Sett :e $HOME/.vim/plugin/settings/
+command! Mapp :e $HOME/.vim/plugin/mappings/
 nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 noremap <c-s> :w<cr>
 nnoremap <cr> :nohl<cr>
@@ -207,8 +208,6 @@ nnoremap <C-y> 3<C-y>
 "--------------------------------
 " Map::File Browser
 "--------------------------------
-command! E :e .
-nnoremap <c-q> <c-^>
 nnoremap <space><space> <c-^>
 nnoremap <space>e :edit <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
 nnoremap <space>v :view <C-R>=escape(expand('%:h:p'), ' ').'/'<cr>
@@ -232,6 +231,7 @@ command! Note :e $1Hq/Local/gvim notes/blank.md
 "--------------------------------
 " Map::Fail-safe
 "--------------------------------
+command! E :e .
 command! Q :q
 command! Qall :qall
 command! QA :qall
