@@ -8,6 +8,6 @@ func! ListMonths()
   call complete(col('.'), list)
   return ''
 endfunc
-inoremap <c-y>1 <C-R>=ListMonths()<CR>
+
 
 

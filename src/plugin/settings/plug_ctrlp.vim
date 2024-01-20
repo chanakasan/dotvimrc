@@ -1,5 +1,4 @@
-nnoremap <space>o :CtrlP<CR>
-nnoremap <space>p :CtrlPBuffer<CR>
+
 
 let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_match_window = 'bottom,order:ttb,min:10,max:10,results:10'

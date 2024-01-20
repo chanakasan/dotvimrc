@@ -2,12 +2,8 @@
 nnoremap <c-s> :w<cr>
 inoremap <c-s> <esc>:w<cr>
 
-
-
 " insert a semicolon at end of line
 nnoremap ;; <esc>m`:s/\s\+$//e<cr>A;<esc>``
-
-
 
 cnoremap $t map ,t :!clear;
 

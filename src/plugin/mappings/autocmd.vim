@@ -1,7 +1,3 @@
-augroup mod_ft_html
-  autocmd!
-  autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
-augroup END
 
 augroup mod_ft_vim
   autocmd!
@@ -21,12 +17,6 @@ augroup END
 augroup mod_ft_sh
   autocmd!
   autocmd FileType sh nnoremap <buffer> <leader>r :w \| !clear; bash %<cr>
-augroup END
-
-augroup mod_ft_qf
-  autocmd!
-  " Wrap the quickfix window
-  autocmd FileType qf setlocal wrap linebreak
 augroup END
 
 augroup mod_ft_gs
@@ -70,7 +60,3 @@ augroup mod_last_cursor_position
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 augroup END
 
-augroup mod_format_options
-  autocmd!
-  autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
-augroup END

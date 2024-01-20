@@ -1,5 +1,7 @@
 " WSL yank support
-let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+" change this path according to your mount point
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  
+
 if executable(s:clip)
     augroup WSLYank
         autocmd!

@@ -3,7 +3,7 @@ augroup run_vim
   autocmd FileType vim nnoremap <buffer> <leader>r :w \| so %<cr>
 augroup END
 
-augroup run_js
+augroup run_javascript
   autocmd!
   autocmd FileType javascript nnoremap <buffer> <leader>r :w \| !clear; node %<cr>
 augroup END
