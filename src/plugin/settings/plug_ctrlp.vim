@@ -1,7 +1,7 @@
 
 
 let g:ctrlp_switch_buffer = 'et'
-let g:ctrlp_match_window = 'bottom,order:ttb,min:10,max:10,results:10'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:40,max:40,results:10'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/vim-ctrlp'
 let g:ctrlp_use_caching = 1

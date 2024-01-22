@@ -1,6 +1,6 @@
 augroup run_vim
   autocmd!
-  autocmd FileType vim nnoremap <buffer> <leader>r :w \| so %<cr>
+  autocmd FileType vim nnoremap ,r :w \| so %<cr>
 augroup END
 
 augroup run_javascript

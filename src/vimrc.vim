@@ -179,10 +179,12 @@ command! Wq :wq
 "------------------------------
 " Map::Self
 "------------------------------
-command! Ed :e $MYVIMRC
-command! ED :Ed
+command! Edrc :e $MYVIMRC
+command! Ed :e $HOME/.vim/plugin
 command! Sett :e $HOME/.vim/plugin/settings
 command! Mapp :e $HOME/.vim/plugin/mappings
+command! ED :Ed
+command! Edr :Edrc
 
 "------------------------------
 " Map::Commands
@@ -210,8 +212,8 @@ nnoremap <a-left> :tabprevious<cr>
 "------------------------------
 set splitbelow
 set splitright
-set winminheight=0
-set winwidth=79
+"set winminheight=0
+"set winwidth=79
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -269,6 +271,8 @@ Plug 'kana/vim-textobj-syntax'
 Plug 'kana/vim-textobj-function'
 Plug 'sgur/vim-textobj-parameter'
 Plug 'kvngvikram/rightclick-macros'
+Plug 'liuchengxu/vim-clap'
+Plug 'Yggdroot/LeaderF'
 "Plug 'skywind3000/vim-quickui'
 
 " Initialize plugin system

@@ -1,4 +1,3 @@
-" EditCustomizerPlugin = {
 function! EditCustomizerPlugin(...)
   let pack_name = 'z-vim-enhancements-pack'
   let plugin_name = 'vim-customizer'
@@ -10,12 +9,7 @@ function! EditCustomizerPlugin(...)
     exec printf(':Explore %s/%s', $HOME, dotvim_path)
   endif
 endfunction
-command! -nargs=* EditCustomizerPlugin call EditCustomizerPlugin(<f-args>)
-command! Edit EditCustomizerPlugin
-command! EDit Edit
-" }
 
-" SetTabs = {
 " set tabstop, softtabstop and shiftwidth to the same value
 function! SetTabs()
   let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
@@ -26,10 +20,7 @@ function! SetTabs()
   endif
   call SummarizeTabs()
 endfunction
-command! -nargs=* SetTabs call SetTabs(<f-args>)
-" }
 
-" SummarizeTabs = {
 function! SummarizeTabs()
   try
     echohl ModeMsg
@@ -45,9 +36,7 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
-" }
 
-" SynStack = {
 " show syntax highlighting groups for word under cursor
 function! <SID>SynStack()
   if !exists("*synstack")
@@ -56,10 +45,8 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 nmap <F3> :call <SID>SynStack()<CR>
-" }
 
-
-" vp doesn't replace paste buffer = {
+" vp doesn't replace paste buffer
 function! RestoreRegister()
   let @" = s:restore_reg
   if &clipboard == "unnamed"
@@ -73,10 +60,8 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 "vnoremap <silent> <expr> p <sid>Repl()
-" }
 
-
-" Multi-purpose Tab key = {
+" Multi-purpose Tab key
 " indent if we're at the beginning of a line. else, do completion.
 function! InsertTabWrapper()
   let col = col('.') - 1
@@ -86,6 +71,4 @@ function! InsertTabWrapper()
     return "\<c-n>"
   endif
 endfunction
-" inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-" inoremap <s-tab> <c-p>
-" }
+

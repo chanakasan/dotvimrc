@@ -1,0 +1,1 @@
+"map <space>r :w \|e out \|setlocal ma \|%d \|w \|.put=execute('so repl.vim') \|setlocal noma \|e repl.vim<cr>

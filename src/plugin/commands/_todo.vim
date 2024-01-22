@@ -1,3 +1,4 @@
+command! -nargs=* SetTabs call SetTabs(<f-args>)
 command! Trim :call <SID>StripTrailingWhitespace()
 command! TRim Trim
 
@@ -6,4 +7,6 @@ command! -nargs=* Stab call Stab()
 
 command! SummarizeTabs call SummarizeTabs()
 
-inoremap <c-y>1 <C-R>=ListMonths()<CR>
+command! -nargs=* EditCustomizerPlugin call EditCustomizerPlugin(<f-args>)
+command! Edit EditCustomizerPlugin
+command! EDit Edit

@@ -1,0 +1,1 @@
+inoremap <c-y>1 <C-R>=ListMonths()<CR>
