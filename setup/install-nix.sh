@@ -1,25 +1,33 @@
 #!/bin/bash
 
 main() {
-  local title="Nex Vim"
-  local dir_name="nex-vim"
+  local plugin_name="vim.nexplugin"
   local start_text='__nex_vim_start'
   local end_text='__nex_vim_end'
   local bashrc="$HOME/.bashrc"
-  local nex_vim_path=$(get_root_path)/$dir_name
-  echo " Installing - $title"
-  
+  local nex_vim_path=$(get_root_path)/$plugin_name
+  start
+  do_install
+  finish
+}
+
+start() {
+  echo " Installing Plugin - Nex Vim"
+}
+
+finish() {
+  echo " done"
+  echo
+}
+
+do_install() {
   ln -nfs $nex_vim_path/src/vimrc.vim $HOME/.vimrc 
   ln -nfs $nex_vim_path/src/gvimrc.vim $HOME/.gvimrc 
   mkdir -p $HOME/.vim
   ln -nfs $nex_vim_path/src/colors $HOME/.vim/colors 
   ln -nfs $nex_vim_path/src/plugin $HOME/.vim/plugin 
-
   install_vim_plug
 
-  echo ""
-  echo " done"
-  echo ""
 }
 
 install_vim_plug() {
