@@ -1,48 +1,27 @@
 #!/bin/bash
 
-main() {
-  local plugin_name="vim.nexplugin"
-  local start_text='__nex_vim_start'
-  local end_text='__nex_vim_end'
-  local bashrc="$HOME/.bashrc"
-  local nex_vim_path=$(get_root_path)/$plugin_name
-  start
-  do_install
-  finish
+set -e
+
+bash $nex_support/plugin/install/run_default.sh "vim"
+nex_vim_path=$nex_plugin_base/vim.plugin
+
+steps() {
+  local root_dir=$HOME
+  create_symlinks
+  download_vim_plug
 }
 
-start() {
-  echo " Installing Plugin - Nex Vim"
+create_symlinks() {
+  ln -nfs $nex_vim_path/src/vimrc.vim $root_dir/.vimrc 
+  ln -nfs $nex_vim_path/src/gvimrc.vim $root_dir/.gvimrc 
+  mkdir -p $root_dir/.vim
+  ln -nfs $nex_vim_path/src/colors $root_dir/.vim/colors 
+  ln -nfs $nex_vim_path/src/plugin $root_dir/.vim/plugin 
 }
 
-finish() {
-  echo " done"
-  echo
+download_vim_plug() {
+    echo " => downloading vim plug"
+    curl -fLo $root_dir/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
-do_install() {
-  ln -nfs $nex_vim_path/src/vimrc.vim $HOME/.vimrc 
-  ln -nfs $nex_vim_path/src/gvimrc.vim $HOME/.gvimrc 
-  mkdir -p $HOME/.vim
-  ln -nfs $nex_vim_path/src/colors $HOME/.vim/colors 
-  ln -nfs $nex_vim_path/src/plugin $HOME/.vim/plugin 
-  install_vim_plug
-
-}
-
-install_vim_plug() {
-    echo " => installing vim plug"
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-}
-
-get_root_path() {
-  local user=$(whoami)
-  if [ "$user" = "codespace" ]; then
-    echo /workspaces/.codespaces/.persistedshare
-  else
-    echo $HOME/dotfiles
-  fi
-}
-
-# _end_
-main
+steps
